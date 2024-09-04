@@ -17,7 +17,7 @@ async def list_tasks(user: User = Depends(get_current_user)):
 async def detail(task_id: UUID, user: User = Depends(get_current_user)):
     return await TaskService.detail(user, task_id)
 
-@task_router.post('/crete', summary='Adiciona Tarefa', response_model=Task)
+@task_router.post('/create', summary='Adiciona Tarefa', response_model=Task)
 async def create_task(data: TaskCreate, user: User = Depends(get_current_user)):
     return await TaskService.create_task(user, data)
 
